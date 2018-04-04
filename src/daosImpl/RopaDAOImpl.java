@@ -65,8 +65,11 @@ public class RopaDAOImpl extends GenericDAO implements RopaDAO {
 				prendas.setDescripcion(result.getString("descripcion"));
 				prendas.setId(result.getInt("id"));
 				prendas.setCoste(result.getString("coste"));
+				prendas.setRutaImagen(FileManager.rutaArchivo(result.getInt("id")));
 				ropa.add(prendas);
 			}
+			ps.close();
+			result.close();
 		} catch (SQLException e) {
 			System.out.println("Se EJECUTA LA SQL LISTAR ROPA");
 			System.out.println(e.getMessage());
