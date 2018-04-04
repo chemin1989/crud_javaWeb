@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import daos.RopaDAO;
 import daosImpl.RopaDAOImpl;
@@ -26,10 +27,11 @@ public class ServletGuardarCambiosRopa extends HttpServlet {
 		String color = request.getParameter("campoColor");
 		String descripcion = request.getParameter("campoDescripcion");
 		String id = request.getParameter("campoId");
+		Part imagenSubida = request.getPart("campoImagen");
 		//validar
 		//...
 		//validar
-		Ropa ropa = new Ropa(marca, modelo, pais, coste, talla, color, descripcion);
+		Ropa ropa = new Ropa(marca, modelo, pais, coste, talla, color, descripcion, imagenSubida);
 			
 			ropa.setId(Integer.parseInt(id));
 		RopaDAO ropaDAO = new RopaDAOImpl();

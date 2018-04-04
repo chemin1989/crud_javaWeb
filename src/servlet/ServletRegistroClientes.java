@@ -38,10 +38,7 @@ public class ServletRegistroClientes extends HttpServlet {
 		String cp = request.getParameter("campoCp");
 		String email = request.getParameter("campoEmail");
 		String ep = request.getParameter("campoEP");
-		
-		
-		
-		
+
 		// Validaciones
 		String gxnombre = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s]{3,20}";
 		String gxapellidos = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s]{3,30}";
@@ -76,24 +73,21 @@ public class ServletRegistroClientes extends HttpServlet {
 		Pattern p7 = Pattern.compile(gxep);
 		Matcher m7 = p7.matcher(ep);
 
-		if (m.matches() && m1.matches() && m2.matches() && m3.matches() && m4.matches() && m5.matches()
-				&& m6.matches() && m7.matches()) {
+		if (m.matches() && m1.matches() && m2.matches() && m3.matches() && m4.matches() && m5.matches() && m6.matches()
+				&& m7.matches()) {
 			System.out.println("datos introducidos correctamente");
+			
 		} else {
 			request.setAttribute("info", "Algun dato no valido");
 			request.getRequestDispatcher("registrarClientes.jsp").forward(request, response);
-			return;
+
 		}
 
 		Cliente registro = new Cliente(nombre, apellidos, direccion, numero, poblacion, cp, email, ep);
-		
-		
 		ClientesDAO clientesDAO = new ClientesDAOImpl();
 		clientesDAO.registrarCliente(registro);
 		request.getRequestDispatcher("registrarClientes.jsp").forward(request, response);
-		
-		
-		
+
 	}
 
 }

@@ -1,5 +1,7 @@
 package modelo;
 
+import javax.servlet.http.Part;
+
 public class Ropa {
 	private String marca;
 	private String modelo;
@@ -9,13 +11,15 @@ public class Ropa {
 	private String color;
 	private String descripcion;
 	private int id;
+	private Part imagenSubida;
+	private String rutaImagen;
 
 	public Ropa() {
 
 	}
 
-	public Ropa(String marca, String modelo, String pais, String coste, String talla, String color,
-			String descripcion) {
+	public Ropa(String marca, String modelo, String pais, String coste, String talla, String color, String descripcion,
+			Part imagenSubida) {
 		super();
 		this.marca = marca;
 		this.modelo = modelo;
@@ -24,6 +28,23 @@ public class Ropa {
 		this.talla = talla;
 		this.color = color;
 		this.descripcion = descripcion;
+		this.imagenSubida = imagenSubida;
+	}
+
+	public Part getImagenSubida() {
+		return imagenSubida;
+	}
+
+	public void setImagenSubida(Part imagenSubida) {
+		this.imagenSubida = imagenSubida;
+	}
+
+	public String getRutaImagen() {
+		return rutaImagen;
+	}
+
+	public void setRutaImagen(String rutaImagen) {
+		this.rutaImagen = rutaImagen;
 	}
 
 	public String getMarca() {
@@ -93,7 +114,8 @@ public class Ropa {
 	@Override
 	public String toString() {
 		return "Ropa [marca=" + marca + ", modelo=" + modelo + ", pais=" + pais + ", coste=" + coste + ", talla="
-				+ talla + ", color=" + color + ", descripcion=" + descripcion + ", id=" + id + "]";
+				+ talla + ", color=" + color + ", descripcion=" + descripcion + ", id=" + id + ", imagenSubida="
+				+ imagenSubida + ", rutaImagen=" + rutaImagen + "]";
 	}
 
 }

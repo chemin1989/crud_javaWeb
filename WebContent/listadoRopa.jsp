@@ -23,8 +23,8 @@
     <th>Talla</th>
     <th>Color</th>
     <th>E/P</th> 
-    <th>BORRAR</th> 
-    <th>EDITAR</th> 
+     
+    
   </tr>
   <tr>
 	    <td>${prendas.marca}</td>
@@ -34,6 +34,7 @@
 	    <td> ${prendas.talla}</td>
 	    <td>${prendas.color}</td>
 	    <td>${prendas.descripcion}</td>
+	    <td><img src="${producto.rutaImagen}" height="35"></td>
 	    <td><a class="botones" href="ServletBorrarRopa?id=${prendas.id}">BORRAR</a></td> 
 	    <td><a class="botones" href="ServletEditarRopa?id=${prendas.id}">EDITAR</a></td>
      </tr>   

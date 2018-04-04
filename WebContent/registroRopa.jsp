@@ -8,20 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	
-	
 	<jsp:include page="menu.jsp"></jsp:include><br/>
-	
-	
+
 		<div>
 		<h1><a>Registro Ropa</a></h1>
 		</div>
-		<form   action="ServletResgistroRopa" method="post">
-							
-			
-			
-					
+		<form action="ServletRegistroRopa" method="post" enctype="multipart/form-data">				
 		Marca 
 		<div>
 			<input name="campoMarca"  type="text" value=""/> 
@@ -49,15 +41,12 @@
 		Descipcion
 		<div>
 			<textarea name="campoDescripcion" ></textarea> 
-		</div> 
-		
-			    
-				<input type="submit" value="Registrar" />
-	
-			
-		</form>	
-	
-	
-				
+		</div>  
+		Imagen
+		<div>
+			<input type="file" name="campoImagen"/>
+		</div>   
+				<input type="submit" value="Registrar" />		
+		</form>					
 </body>
 </html>

@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
 import com.sun.org.apache.bcel.internal.generic.RETURN;
@@ -41,53 +42,56 @@ public class ServletRegistroRopa extends HttpServlet {
 		String talla = request.getParameter("campoTalla");
 		String color = request.getParameter("campoColor");
 		String descripcion = request.getParameter("campoDescripcion");
+		Part imagenSubida = request.getPart("campoImagen");
 
 		// Validaciones
-		String gxmarca = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s0-9]{3,10}";
-		String gxmodelo = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s0-9]{3,10}";
-		String gxpais = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s]{3,15}";
-		String gxcoste = "[0-9]{1,4}[,]*[0-9]{0,2}";
-		String gxtalla = "[xsml1-9]{1,3}";
-		String gxcolor = "#?[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s0-9]{2,15}";
-		String gxdescripcion = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s0-9]{0,100}";
-
-		Pattern p = Pattern.compile(gxmarca);
-		Matcher m = p.matcher(marca);
-
-		Pattern p1 = Pattern.compile(gxmodelo);
-		Matcher m1 = p1.matcher(modelo);
-
-		Pattern p2 = Pattern.compile(gxpais);
-		Matcher m2 = p2.matcher(pais);
-
-		Pattern p3 = Pattern.compile(gxcoste);
-		Matcher m3 = p3.matcher(coste);
-
-		Pattern p4 = Pattern.compile(gxtalla);
-		Matcher m4 = p4.matcher(talla.toLowerCase());
-
-		Pattern p5 = Pattern.compile(gxcolor);
-		Matcher m5 = p5.matcher(color);
-
-		Pattern p6 = Pattern.compile(gxdescripcion);
-		Matcher m6 = p6.matcher(descripcion);
-
-		if (m.matches()&& m1.matches()&&m2.matches()&& m3.matches()&& m4.matches()&& m5.matches()&& m6.matches()) {
-			System.out.println("datos introducidos correctamente");	
-		} else {
-			request.setAttribute("info", "Algun dato no valido");
-			request.getRequestDispatcher("registroRopa.jsp").forward(request, response);
-			return;	
-		}
-		// **
-
-		Ropa registroRopa = new Ropa(marca, modelo, pais, coste, talla, color, descripcion);
-		System.out.println("vamos a registrar: " + registroRopa.toString());
+//		String gxmarca = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s0-9]{3,10}";
+//		String gxmodelo = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s0-9]{3,10}";
+//		String gxpais = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s]{3,15}";
+//		String gxcoste = "[0-9]{1,4}[,]?[.]?[0-9]{0,2}";
+//		String gxtalla = "[xsml1-9]{1,3}";
+//		String gxcolor = "#?[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s0-9]{2,15}";
+//		String gxdescripcion = "[a-zA-ZáéíóúÁÉÍÓÚÑñ\\s0-9]{0,100}";
+//
+//		Pattern p = Pattern.compile(gxmarca);
+//		Matcher m = p.matcher(marca);
+//
+//		Pattern p1 = Pattern.compile(gxmodelo);
+//		Matcher m1 = p1.matcher(modelo);
+//
+//		Pattern p2 = Pattern.compile(gxpais);
+//		Matcher m2 = p2.matcher(pais);
+//
+//		Pattern p3 = Pattern.compile(gxcoste);
+//		Matcher m3 = p3.matcher(coste);
+//
+//		Pattern p4 = Pattern.compile(gxtalla);
+//		Matcher m4 = p4.matcher(talla.toLowerCase());
+//
+//		Pattern p5 = Pattern.compile(gxcolor);
+//		Matcher m5 = p5.matcher(color);
+//
+//		Pattern p6 = Pattern.compile(gxdescripcion);
+//		Matcher m6 = p6.matcher(descripcion);
+//
+//		if (m.matches()&& m1.matches()&&m2.matches()&& m3.matches()&& m4.matches()&& m5.matches()&& m6.matches()) {
+//			System.out.println("datos introducidos correctamente");	
+//			
+//			
+//			  
+//		} else {
+//			request.setAttribute("info", "Algun dato no valido");
+//			request.getRequestDispatcher("registroRopa.jsp").forward(request, response);
+				
+//		}
+		System.out.println("hola");
+		Ropa registroRopa = new Ropa(marca, modelo, pais, coste, talla, color, descripcion, imagenSubida);
 
 		System.out.println("que hay en ropa: " + registroRopa.toString());
 		RopaDAO ropaDAO = new RopaDAOImpl();
 		ropaDAO.registrarRopa(registroRopa);
 		request.getRequestDispatcher("registroRopa.jsp").forward(request, response);
+		
 
 	}
 

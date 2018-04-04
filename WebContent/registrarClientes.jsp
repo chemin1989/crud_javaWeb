@@ -65,17 +65,8 @@
 			<option value="Particular" >Particular</option>
 		</select>
 		</div> 
-		</li>
-		<li id="li_8" >
-		<label class="description" for="element_8">Pais</label>
-		<div>
-		<select class="element select medium" id="element_8" name="campoPais"> 
-				<c:forEach items="${listar}" var="listar">
-			<option value= "1">${listar.nombre}</option>
-			</c:forEach>
-		</select>
-		</div> 
 		</li><br/>
+		
 		
 			
 					<li class="buttons">
