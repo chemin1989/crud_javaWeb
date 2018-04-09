@@ -6,7 +6,6 @@ import modelo.Cliente;
 
 public interface ClientesDAO {
 
-	
 	List<Cliente> listarCliente();
 
 	boolean identificarAdmin(String usuario, String contraseña);
@@ -18,20 +17,5 @@ public interface ClientesDAO {
 	void guardarCamiosCliente(Cliente cliente);
 
 	Cliente borrarClienteId(int id);
-	
 
-
-	
-	
-
-	
-
-	
-
-	
-
-	
-	
-
-	
 }

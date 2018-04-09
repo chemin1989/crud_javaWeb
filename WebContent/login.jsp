@@ -21,10 +21,7 @@
 		<input class="submit-button" type="submit" value="Submit" />
 	</div>
 </form>
-	</div>
-	
-	
-	
+	</div>	
 	
 </html>
 	
@@ -33,29 +30,3 @@
 	
 	
 	
-	
-<!-- 		<div> -->
-<!-- 		<h1><a>INTRODUCE TUS DATOS</a></h1> -->
-<!-- 		</div> -->
-<%-- 		<div "style=color:red" >&nbsp;${mensaje}</div> --%>
-<!-- 		<form  method="post" action="ServletIdentificacionAdmin"> -->
-							
-<!-- 			<ul> -->
-			
-<!-- 		<label>Usuario </label> -->
-<!-- 		<div> -->
-<!-- 			<input name="campoUsuario"  type="text" value=""/>  -->
-<!-- 		</div>  -->
-<!-- 		<label>Contraseña </label> -->
-<!-- 		<div> -->
-<!-- 			<input  name="campoContraseña"  type="password"  value=""/>  -->
-<!-- 		</div>  -->
-			    
-<!-- 				<input type="submit" value="Entrar" /> -->
-	
-<!-- 			</ul> -->
-<!-- 		</form>	 -->
-	
-	
-
-<!-- </body> -->

@@ -15,13 +15,6 @@ public class ConstantesSQL {
 	public static final String OBTENER_CLIENTE_POR_ID = "select * from tabla_clientes where id = ?";
 	public static final String GUARDAR_CAMBIOS_CLIENTE_POR_ID = "update tabla_clientes set nombre = ?, apellidos = ?, direccion = ?, numero = ?, poblacion = ?, cp = ?, email = ?, ep= ? where id = ?";
 	public static final String BORRAR_CLIENTE_POR_ID = "delete from tabla_clientes where id = ?";
-	public static final String LISTAR_PAIS = "select nombre from tabla_paises where id = 1";
-	
-
-
-	
-
-
-	
-
+	public static final String SQL_REGISTRO_USUARIO = "insert into tabla_usuario(nombre, email,comentario) VALUES(?,?,?)";
+	public static final String SQL_LISTAR_USUARIO = "select * from tabla_usuario";	
 }

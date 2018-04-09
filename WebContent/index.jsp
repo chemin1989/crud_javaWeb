@@ -108,7 +108,7 @@
     <!-- slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"Volvere a comprar aquÃ­!!!!!"<br><span>Javier Martin Marin</span></h4>
+        <h4>"Volvere a comprar aquí­!!!!!"<br><span>Javier Martin Marin</span></h4>
       </div>
       <div class="item">
         <h4>"Buena tienda, calidad precio inmejorable"<br><span>Pilar Tapia Alonso</span></h4>
@@ -187,7 +187,7 @@
 
 
 
-<!-- Contacto -->
+<!--Area Contacto -->
 <div id="contacto" class="container-fluid bg-grey">
   <h2 class="text-center">CONTACTO</h2>
   <div class="row">
@@ -197,25 +197,26 @@
       <p><span class="glyphicon glyphicon-phone"></span> 616185417</p>
       <p><span class="glyphicon glyphicon-envelope"></span> josecruzigle@mail.com</p>
     </div>
+    <form action="ServletRegistroUsuarios" method="post"> 
     <div class="col-sm-7 slideanim">
       <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required>
+        <div class="col-sm-6 form-group">   
+          <input class="form-control" id="name" name="campoNombre" placeholder="Nombre" type="text" required>
         </div>
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          <input class="form-control" id="email" name="campoEmail" placeholder="Email" type="email" required>
         </div>
       </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comentario" rows="5"></textarea><br>
+      <textarea class="form-control" id="comments" name="campoComentario" placeholder="Comentario" rows="5"></textarea><br>
       <div class="row">
         <div class="col-sm-12 form-group">
           <button class="btn btn-default pull-right" type="submit">Enviar</button>
         </div>
       </div>
-    </div>
+  </form>
   </div>
 </div>
-
+ 
 <!-- Maps -->
 <div id="donde" ></div>
 <div id="googleMap" style="height:400px;width:100%;"></div>
