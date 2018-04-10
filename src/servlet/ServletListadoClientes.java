@@ -23,7 +23,7 @@ public class ServletListadoClientes extends HttpServlet {
 		System.out.println("ServletListadoRopa-hasta aqui");
 		ClientesDAO clientesDAO = new ClientesDAOImpl();
 		request.setAttribute("clientes", clientesDAO.listarCliente());
-		request.getRequestDispatcher("ServletListadoClientes").forward(request, response);
+		request.getRequestDispatcher("listarClientes.jsp").forward(request, response);
 		
 		
 		

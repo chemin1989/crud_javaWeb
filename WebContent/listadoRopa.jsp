@@ -21,7 +21,9 @@
 				<th>Coste</th>
 				<th>Talla</th>
 				<th>Color</th>
-				<th>E/P</th>
+				<th>Descipción</th>
+				<th>Imagen</th>
+				
 			</tr>
 			<tr>
 				<td>${prendas.marca}</td>
@@ -31,7 +33,7 @@
 				<td>${prendas.talla}</td>
 				<td>${prendas.color}</td>
 				<td>${prendas.descripcion}</td>
-				<td><img src="${producto.rutaImagen}" height="35"></td>
+				<td><img src="${prendas.rutaImagen}" height="35"></td>
 				<td><a class="botones"
 					href="ServletBorrarRopa?id=${prendas.id}">BORRAR</a></td>
 				<td><a class="botones"
