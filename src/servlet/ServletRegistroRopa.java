@@ -86,7 +86,7 @@ public class ServletRegistroRopa extends HttpServlet {
 			request.getRequestDispatcher("registroRopa.jsp").forward(request, response);
 				
 		}
-		System.out.println("hola");
+	
 		Ropa registroRopa = new Ropa(marca, modelo, pais, coste, talla, color, descripcion, imagenSubida);
 
 		System.out.println("que hay en ropa: " + registroRopa.toString());
